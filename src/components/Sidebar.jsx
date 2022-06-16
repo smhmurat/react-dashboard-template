@@ -8,7 +8,8 @@ import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColor } =
+    useStateContext();
 
   const handleCloseSideBar = () => {
     if (activeMenu && screenSize <= 900) {
@@ -31,7 +32,7 @@ const Sidebar = () => {
               onClick={() => handleCloseSideBar}
               className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
             >
-              <SiShopify />
+              <SiShopify style={{ color: currentColor }} />
               <span>Shopifyy</span>
             </Link>
             <TooltipComponent content="Menu">
@@ -55,12 +56,15 @@ const Sidebar = () => {
                     to={`/${link.name}`}
                     key={link.name}
                     onClick={() => handleCloseSideBar}
+                    style={({ isActive }) => ({
+                      backgroundColor: isActive ? currentColor : "",
+                    })}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
                     }
                   >
                     {link.icon}
-                    <span className="capitalize">{link.name}</span>
+                    <span className="capitalize">{link.nametr}</span>
                   </NavLink>
                 ))}
               </div>

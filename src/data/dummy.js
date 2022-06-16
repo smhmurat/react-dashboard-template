@@ -64,19 +64,20 @@ export const gridOrderStatus = (props) => (
 );
 
 export const kanbanGrid = [
-  { headerText: "To Do", keyField: "Open", allowToggle: true },
+  { headerText: "Yapılacaklar", keyField: "Open", allowToggle: true },
 
-  { headerText: "In Progress", keyField: "InProgress", allowToggle: true },
+  { headerText: "Devam Edenler", keyField: "InProgress", allowToggle: true },
 
   {
-    headerText: "Testing",
+    headerText: "Test Aşamasındakiler",
     keyField: "Testing",
     allowToggle: true,
     isExpanded: false,
   },
 
-  { headerText: "Done", keyField: "Close", allowToggle: true },
+  { headerText: "Tamamlananlar", keyField: "Close", allowToggle: true },
 ];
+
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
@@ -236,7 +237,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[0],
     xName: "x",
     yName: "y",
-    name: "USA",
+    name: "İstanbul",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -245,7 +246,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[1],
     xName: "x",
     yName: "y",
-    name: "France",
+    name: "İzmir",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -254,7 +255,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[2],
     xName: "x",
     yName: "y",
-    name: "Germany",
+    name: "Ankara",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -263,19 +264,19 @@ export const areaCustomSeries = [
 
 export const barChartData = [
   [
-    { x: "USA", y: 46 },
-    { x: "GBR", y: 27 },
-    { x: "CHN", y: 26 },
+    { x: "İstanbul", y: 46 },
+    { x: "Ankara", y: 27 },
+    { x: "İzmir", y: 26 },
   ],
   [
-    { x: "USA", y: 37 },
-    { x: "GBR", y: 23 },
-    { x: "CHN", y: 18 },
+    { x: "İstanbul", y: 37 },
+    { x: "Ankara", y: 23 },
+    { x: "İzmir", y: 18 },
   ],
   [
-    { x: "USA", y: 38 },
-    { x: "GBR", y: 17 },
-    { x: "CHN", y: 26 },
+    { x: "İstanbul", y: 38 },
+    { x: "Ankara", y: 17 },
+    { x: "İzmir", y: 26 },
   ],
 ];
 
@@ -284,7 +285,7 @@ export const barCustomSeries = [
     dataSource: barChartData[0],
     xName: "x",
     yName: "y",
-    name: "Gold",
+    name: "Altın",
     type: "Column",
     marker: {
       dataLabel: {
@@ -298,7 +299,7 @@ export const barCustomSeries = [
     dataSource: barChartData[1],
     xName: "x",
     yName: "y",
-    name: "Silver",
+    name: "Gümüş",
     type: "Column",
     marker: {
       dataLabel: {
@@ -312,7 +313,7 @@ export const barCustomSeries = [
     dataSource: barChartData[2],
     xName: "x",
     yName: "y",
-    name: "Bronze",
+    name: "Bronz",
     type: "Column",
     marker: {
       dataLabel: {
@@ -415,20 +416,20 @@ export const LinePrimaryYAxis = {
 export const customersGrid = [
   { type: "checkbox", width: "50" },
   {
-    headerText: "Name",
+    headerText: "İsim",
     width: "150",
     template: customerGridImage,
     textAlign: "Center",
   },
   {
     field: "ProjectName",
-    headerText: "Project Name",
+    headerText: "Proje Adı",
     width: "150",
     textAlign: "Center",
   },
   {
     field: "Status",
-    headerText: "Status",
+    headerText: "Durum",
     width: "130",
     format: "yMd",
     textAlign: "Center",
@@ -436,14 +437,14 @@ export const customersGrid = [
   },
   {
     field: "Weeks",
-    headerText: "Weeks",
+    headerText: "Haftalar",
     width: "100",
     format: "C2",
     textAlign: "Center",
   },
   {
     field: "Budget",
-    headerText: "Budget",
+    headerText: "Bütçe",
     width: "100",
     format: "yMd",
     textAlign: "Center",
@@ -451,14 +452,14 @@ export const customersGrid = [
 
   {
     field: "Location",
-    headerText: "Location",
+    headerText: "Lokasyon",
     width: "150",
     textAlign: "Center",
   },
 
   {
     field: "CustomerID",
-    headerText: "Customer ID",
+    headerText: "Müşteri ID",
     width: "120",
     textAlign: "Center",
     isPrimaryKey: true,
@@ -467,7 +468,7 @@ export const customersGrid = [
 
 export const employeesGrid = [
   {
-    headerText: "Employee",
+    headerText: "Adı Soyadı",
     width: "150",
     template: gridEmployeeProfile,
     textAlign: "Center",
@@ -475,12 +476,12 @@ export const employeesGrid = [
   { field: "Name", headerText: "", width: "0", textAlign: "Center" },
   {
     field: "Title",
-    headerText: "Designation",
+    headerText: "Ünvan",
     width: "170",
     textAlign: "Center",
   },
   {
-    headerText: "Country",
+    headerText: "Şehir",
     width: "120",
     textAlign: "Center",
     template: gridEmployeeCountry,
@@ -488,7 +489,7 @@ export const employeesGrid = [
 
   {
     field: "HireDate",
-    headerText: "Hire Date",
+    headerText: "İşe Başlama Tarihi",
     width: "135",
     format: "yMd",
     textAlign: "Center",
@@ -496,13 +497,13 @@ export const employeesGrid = [
 
   {
     field: "ReportsTo",
-    headerText: "Reports To",
+    headerText: "Sorumlu",
     width: "120",
     textAlign: "Center",
   },
   {
     field: "EmployeeID",
-    headerText: "Employee ID",
+    headerText: "Çalışan ID",
     width: "125",
     textAlign: "Center",
   },
@@ -510,87 +511,103 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: "Dashboard",
+    title: "Yönetim Paneli",
     links: [
       {
         name: "ecommerce",
+        nametr: "genel durum",
         icon: <FiShoppingBag />,
       },
     ],
   },
 
   {
-    title: "Pages",
+    title: "Sayfalar",
     links: [
       {
         name: "orders",
+        nametr: "siparişler",
         icon: <AiOutlineShoppingCart />,
       },
       {
         name: "employees",
+        nametr: "çalışanlar",
         icon: <IoMdContacts />,
       },
       {
         name: "customers",
+        nametr: "müşteriler",
         icon: <RiContactsLine />,
       },
     ],
   },
   {
-    title: "Apps",
+    title: "Uygulamalar",
     links: [
       {
         name: "calendar",
+        nametr: "takvim",
         icon: <AiOutlineCalendar />,
       },
       {
         name: "kanban",
+        nametr: "kanban",
         icon: <BsKanban />,
       },
       {
         name: "editor",
+        nametr: "editör",
         icon: <FiEdit />,
       },
       {
         name: "color-picker",
+        nametr: "renk şeması",
         icon: <BiColorFill />,
       },
     ],
   },
   {
-    title: "Charts",
+    title: "Grafikler",
     links: [
       {
         name: "line",
+        nametr: "çizgi",
         icon: <AiOutlineStock />,
       },
       {
         name: "area",
+        nametr: "alan",
         icon: <AiOutlineAreaChart />,
       },
 
       {
         name: "bar",
+        nametr: "çubuk",
         icon: <AiOutlineBarChart />,
       },
       {
         name: "pie",
+        nametr: "pasta",
         icon: <FiPieChart />,
       },
       {
         name: "financial",
+        nametr: "finansal",
         icon: <RiStockLine />,
       },
       {
         name: "color-mapping",
+        nametr: "renk haritası",
         icon: <BsBarChart />,
       },
       {
         name: "pyramid",
+        nametr: "piramit",
         icon: <GiLouvrePyramid />,
       },
       {
         name: "stacked",
+        nametr: "yığın",
         icon: <AiOutlineBarChart />,
       },
     ],
@@ -845,26 +862,26 @@ export const medicalproBranding = {
 export const themeColors = [
   {
     name: "blue-theme",
-    color: "#1A97F5",
+    color: "#2980b9",
   },
   {
     name: "green-theme",
-    color: "#03C9D7",
+    color: "#00897B",
   },
   {
     name: "purple-theme",
-    color: "#7352FF",
+    color: "#673AB7",
   },
   {
     name: "red-theme",
-    color: "#FF5C8E",
+    color: "#DE350B",
   },
   {
     name: "indigo-theme",
-    color: "#1E4DB7",
+    color: "#FF6F00",
   },
   {
-    color: "#FB9678",
+    color: "#FFA800",
     name: "orange-theme",
   },
 ];
@@ -2969,7 +2986,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[0],
     xName: "x",
     yName: "y",
-    name: "Germany",
+    name: "İstanbul",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2979,7 +2996,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[1],
     xName: "x",
     yName: "y",
-    name: "England",
+    name: "Ankara",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2989,7 +3006,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[2],
     xName: "x",
     yName: "y",
-    name: "India",
+    name: "İzmir",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
